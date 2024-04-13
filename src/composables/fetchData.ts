@@ -12,6 +12,7 @@ export async function createGame(token: string, boardId: string, playersIds: str
     })
     const data = await response.json()
     console.log(data)
+    return data
   } catch (error) {
     console.error('Error fetching data:', error)
   }

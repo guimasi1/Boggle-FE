@@ -1,7 +1,8 @@
+<!-- eslint-disable @typescript-eslint/no-unused-vars -->
 <script setup lang="ts">
 import router from '@/router'
 import { useAuthStore } from '@/stores/authStore'
-import { ref } from 'vue'
+import { ref, watch } from 'vue'
 
 const authStore = useAuthStore()
 const email = ref('')
@@ -18,7 +19,7 @@ const login = async () => {
     })
     if (response.ok) {
       const data = await response.json()
-      authStore.setUser(data.token)
+      authStore.setToken(data.token)
       router.push({ path: '/' })
     } else {
       throw new Error('Something went wrong')
@@ -30,6 +31,25 @@ const login = async () => {
     password.value = ''
   }
 }
+
+watch(
+  () => authStore.token,
+  async (newToken, oldToken) => {
+    if (newToken) {
+      try {
+        const response = await fetch('http://localhost:3001/api/users/me', {
+          headers: {
+            Authorization: 'Bearer ' + newToken
+          }
+        })
+        const data = await response.json()
+        authStore.setUser(data)
+      } catch (err) {
+        console.log(err)
+      }
+    }
+  }
+)
 </script>
 
 <template>

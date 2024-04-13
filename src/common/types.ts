@@ -1,14 +1,14 @@
 export interface User {
-  id: String
-  username: String
-  email: String
+  id: string
+  username: string
+  email: string
   games?: Score[]
-  role?: String
+  role?: string
   scores?: Score[]
 }
 
 export interface Game {
-  id: String
+  id: string
   board?: Board
   users?: User[]
   scores?: Score[]
@@ -21,21 +21,21 @@ export interface Board {
 }
 
 export interface Cell {
-  id: String
-  letter: String
+  id: string
+  letter: string
   row: Number
   col: Number
   board?: Board
 }
 
 export interface Score {
-  id: String
+  id: string
   score: Number
   game?: Game
   user?: User
 }
 
 export interface UserLoginData {
-  email: String
-  password: String
+  email: string
+  password: string
 }
