@@ -1,10 +1,13 @@
 <script setup lang="ts">
 import router from '@/router'
 import { useAuthStore } from '@/stores/authStore'
+import { useGameStore } from '@/stores/gameStore'
 
 const authStore = useAuthStore()
+const gameStore = useGameStore()
 const startGame = () => {
   router.push({ path: '/gameplay' })
+  gameStore.setResponseMessage('')
 }
 </script>
 

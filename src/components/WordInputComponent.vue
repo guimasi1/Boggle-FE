@@ -32,14 +32,18 @@ const handleWord = async () => {
 </script>
 <template>
   <div class="container mx-auto flex mt-6 flex-col items-center h-32">
+    <div class="h-10 text-start mb-3">
+      <p class="font-bold text-lg d-inline-block">{{ word }} <br /></p>
+    </div>
     <form @submit.prevent="handleWord">
       <input type="text" v-model="word" class="rounded-xl mb-10" />
     </form>
     <div class="h-10 text-start">
-      <p class="font-bold text-lg d-inline-block">{{ word }}</p>
-    </div>
-    <div class="h-10 text-start">
-      <p class="font-bold text-lg d-inline-block px-4 py-2 rounded-lg" :class="borderValidWord">
+      <p
+        class="font-bold text-lg d-inline-block px-4 py-2 rounded-lg"
+        :class="borderValidWord"
+        v-if="responseMessage"
+      >
         {{ responseMessage }}
       </p>
     </div>

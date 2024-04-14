@@ -38,3 +38,20 @@ export async function createBoard(token: string, size: number) {
     console.log(err)
   }
 }
+
+export async function getGame(token: string, id: string) {
+  try {
+    const response = await fetch(baseUrl + '/api/games/' + id, {
+      headers: {
+        Authorization: 'Bearer ' + token
+      }
+    })
+    if (response.ok) {
+      return response.json()
+    } else {
+      throw new Error('Something went wrong.')
+    }
+  } catch (err) {
+    console.log(err)
+  }
+}

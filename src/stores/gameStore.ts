@@ -5,7 +5,8 @@ export const useGameStore = defineStore('game', {
   state: () => ({
     board: null as Board | null,
     game: null as Game | null,
-    responseMessage: ''
+    responseMessage: '',
+    timerCount: 60
   }),
   actions: {
     setBoard(board: Board) {
@@ -16,6 +17,12 @@ export const useGameStore = defineStore('game', {
     },
     setResponseMessage(response: string) {
       this.responseMessage = response
+    },
+    decrementTimer() {
+      if (this.timerCount > 0) this.timerCount--
+    },
+    resetTimer() {
+      this.timerCount = 60
     }
   }
 })
