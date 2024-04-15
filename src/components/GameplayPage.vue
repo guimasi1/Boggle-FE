@@ -11,7 +11,7 @@ const gameStore = useGameStore()
 const cells = computed(() => gameStore.board?.cells)
 onMounted(async () => {
   try {
-    const boardData = await createBoard(authStore.token, 4)
+    const boardData = await createBoard(authStore.token, gameStore.size)
     if (!boardData) throw new Error('Failed to create board')
     gameStore.setBoard(boardData)
     if (authStore.user !== null) {
@@ -25,16 +25,21 @@ onMounted(async () => {
 })
 </script>
 <template>
-  <div class="md:container md:mx-auto mx-10 bg-orange-400 rounded-2xl px-16 py-5">
+  <div class="md:container md:mx-auto bg-orange-500 rounded-2xl md:px-16 pt-1 pb-5">
     <div
-      class="flex mx-auto justify-center items-center text-5xl text-red-900 border-8 border-red-900 d-inline-block rounded-full w-24 h-24 my-4"
+      class="flex mx-auto justify-center items-center text-5xl text-red-900 d-inline-block rounded-xl h-12 my-2"
     >
       <TimerItem />
     </div>
-    <div class="grid grid-cols-4 rounded-3xl border-8 border-red-600 p-1">
-      <div class="cell rounded-xl m-1" v-for="(cell, index) in cells" :key="index">
+    <div class="lg:w-10/12 mx-auto px-2 md:px-0">
+      <div
+        class="board grid rounded-3xl border-8 border-red-600 p-1 flex-wrap gap-2"
+        :class="{ 'grid-cols-4': gameStore.size === 4, 'grid-cols-5': gameStore.size === 5 }"
+      >
         <div
-          class="bg-white shadow-xl px-1 h-24 flex justify-center items-center font-bold rounded-2xl"
+          class="cell rounded-xl md:h-full bg-white shadow-xl flex justify-center items-center"
+          v-for="(cell, index) in cells"
+          :key="index"
         >
           {{ cell.letter }}
         </div>
@@ -51,11 +56,15 @@ onMounted(async () => {
 <style scoped>
 .cell {
   padding: 0.1em;
-  color: #ff0a0ad2;
-  background: #ff0a0ad2;
 
+  color: #ff0a0ad2;
+  width: 95%;
   text-align: center;
   font-weight: bold;
-  font-size: 3em;
+  font-size: 2em;
+}
+
+.board {
+  height: 571px;
 }
 </style>

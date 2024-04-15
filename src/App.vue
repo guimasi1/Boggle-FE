@@ -1,8 +1,12 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
 import { useAuthStore } from '@/stores/authStore'
+import router from './router'
 
 const authStore = useAuthStore()
+const goToRegistration = () => {
+  router.push('/registration')
+}
 </script>
 
 <template>
@@ -15,7 +19,8 @@ const authStore = useAuthStore()
             >Login</RouterLink
           >
           <RouterLink
-            to="/register"
+            @click.prevent=""
+            to="/registration"
             v-if="!authStore.isLoggedIn"
             class="font-bold px-6 py-2 bg-orange-500 rounded-full"
             >Register</RouterLink

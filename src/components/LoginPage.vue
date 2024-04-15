@@ -54,7 +54,7 @@ watch(
 
 <template>
   <div
-    class="md:container ms-5 me-5 md:mx-auto bg-gradient-to-r from-orange-700 to-rose-500 py-10 px-10 rounded-md"
+    class="md:container md:w-1/2 ms-5 me-5 md:mx-auto bg-gradient-to-r from-orange-700 to-rose-500 py-10 px-10 rounded-md"
   >
     <h1 class="text-5xl text-black font-bold">Login</h1>
     <p class="mt-4">Login with your data that you entered during your registration.</p>
@@ -66,7 +66,7 @@ watch(
           id="email-input"
           type="email"
           placeholder="Enter email address"
-          class="mt-3 md:w-1/4"
+          class="mt-3 md:w-1/2"
         />
       </div>
       <div class="flex flex-col">
@@ -76,7 +76,7 @@ watch(
           id="password-input"
           type="password"
           placeholder="Enter password"
-          class="mt-3 md:w-1/4"
+          class="mt-3 md:w-1/2"
         />
       </div>
       <div>
@@ -87,16 +87,8 @@ watch(
 </template>
 
 <style scoped>
-input {
-  border-radius: 0.3em;
-  color: black;
-  padding: 0.7em 0.5em;
-}
-input::placeholder {
-  margin: 0.3em;
-}
 button {
-  border-radius: 0.5em;
+  border-radius: 1.5em;
   padding: 0.5em 1em;
   color: #fff;
   border: #000;

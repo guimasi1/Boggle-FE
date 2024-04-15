@@ -3,6 +3,7 @@ import HomePage from '@/components/HomePage.vue'
 import LoginPage from '@/components/LoginPage.vue'
 import GameplayPage from '@/components/GameplayPage.vue'
 import GameResultPage from '@/components/GameResultPage.vue'
+import RegistrationPage from '@/components/RegistrationPage.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -26,6 +27,11 @@ const router = createRouter({
       path: '/game-result',
       name: 'game-result',
       component: GameResultPage
+    },
+    {
+      path: '/registration',
+      name: 'register',
+      component: RegistrationPage
     }
   ]
 })

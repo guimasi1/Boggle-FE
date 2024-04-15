@@ -31,12 +31,9 @@ const handleWord = async () => {
 }
 </script>
 <template>
-  <div class="container mx-auto flex mt-6 flex-col items-center h-32">
-    <div class="h-10 text-start mb-3">
-      <p class="font-bold text-lg d-inline-block">{{ word }} <br /></p>
-    </div>
+  <div class="container mx-auto flex mt-5 flex-col items-center h-16">
     <form @submit.prevent="handleWord">
-      <input type="text" v-model="word" class="rounded-xl mb-10" />
+      <input type="text" v-model="word" class="bg-orange-500 rounded-xl mb-6 text-white" />
     </form>
     <div class="h-10 text-start">
       <p
@@ -52,7 +49,6 @@ const handleWord = async () => {
 
 <style scoped>
 input {
-  background-color: rgb(185, 122, 11);
   padding: 0.7em 2em;
 }
 </style>
