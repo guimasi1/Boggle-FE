@@ -13,7 +13,7 @@ Back-end: Java, Spring.
 
 - Register and login.
 - Choose the board's size.
-- Choose time in seconds.
+- Choose timer's length in seconds.
 
 ## Try it!
 
