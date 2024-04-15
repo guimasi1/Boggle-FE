@@ -1,61 +1,22 @@
 # Boggle-FE
 
-This template should help get you started developing with Vue 3 in Vite.
+This is the front-end application of my Boggle project. You can find the back-end repository here: https://github.com/guimasi1/Boggle
+Boggle is an exciting word search game where players aim to find as many words as possible on a lettered grid. 
+You gain points based on the word's length, for example: 4 letters words --> 1 point.
 
-## Recommended IDE Setup
+## Technology
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+Front-end: Vue.js, Tailwind CSS.
+Back-end: Java, Spring.
 
-## Type Support for `.vue` Imports in TS
+## Functionality 
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+- Register and login.
+- Choose the board's size.
+- Choose time in seconds.
 
-## Customize configuration
+## Try it!
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+- npm init
+- npm run dev
 
-## Project Setup
-
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Type-Check, Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Run Unit Tests with [Vitest](https://vitest.dev/)
-
-```sh
-npm run test:unit
-```
-
-### Run End-to-End Tests with [Cypress](https://www.cypress.io/)
-
-```sh
-npm run test:e2e:dev
-```
-
-This runs the end-to-end tests against the Vite development server.
-It is much faster than the production build.
-
-But it's still recommended to test the production build with `test:e2e` before deploying (e.g. in CI environments):
-
-```sh
-npm run build
-npm run test:e2e
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
