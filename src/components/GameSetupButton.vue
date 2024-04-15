@@ -22,7 +22,7 @@ const handleTimer = (e: Event): void => {
 </script>
 
 <template>
-  <div class="container mx-auto mt-20">
+  <div class="container mx-auto mt-52">
     <form class="flex flex-col items-center">
       <div class="flex gap-32">
         <div class="flex-col">
